@@ -9,4 +9,14 @@
               android:name="me.fonix232.tipyapp.ui.fragment.UserListFragment"
               android:label="UserListFragment"
               tools:layout="@layout/fragment_user_list"/>
+    <fragment android:id="@+id/todoListFragment"
+              android:name="me.fonix232.tipyapp.ui.fragment.TodoListFragment"
+              android:label="TodoListFragment"
+              tools:layout="@layout/fragment_todo_list">
+        <argument android:name="userId" app:argType="integer"/>
+    </fragment>
+    <action android:id="@+id/gotoTodos" app:destination="@id/todoListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/userListFragment"/>
 </navigation>

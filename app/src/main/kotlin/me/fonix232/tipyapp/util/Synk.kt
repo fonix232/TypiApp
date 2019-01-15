@@ -8,7 +8,7 @@ import org.koin.standalone.inject
 import java.util.concurrent.TimeUnit
 
 class Synk : KoinComponent {
-    val preferences: SharedPreferences by inject()
+    private val preferences: SharedPreferences by inject()
 
     companion object {
         private const val SYNK_IT = true
@@ -16,13 +16,6 @@ class Synk : KoinComponent {
     }
 
     fun shouldSync(key: String, window: Int = 4, unit: TimeUnit = TimeUnit.HOURS): Boolean {
-        if (unit == TimeUnit.MILLISECONDS
-            || unit == TimeUnit.NANOSECONDS
-            || unit == TimeUnit.MICROSECONDS
-            || unit == TimeUnit.SECONDS
-        )
-            throw IllegalStateException("Illegal time window")
-
         val currentSavedValue = preferences.getString(key, "")
 
         if (currentSavedValue.isNullOrEmpty()) //Operation has never run or Synk doesn't know about it
@@ -33,7 +26,7 @@ class Synk : KoinComponent {
             TimeUnit.MINUTES -> syncedTime.plusMinutes(window)
             TimeUnit.HOURS -> syncedTime.plusHours(window)
             TimeUnit.DAYS -> syncedTime.plusDays(window)
-            else -> syncedTime
+            else -> throw IllegalStateException("Illegal time window")
         }
 
         //Is the current time past the sync block window?
@@ -49,7 +42,6 @@ class Synk : KoinComponent {
             ?.remove(key)
             ?.apply()
     }
-
 
     private fun syncIt(key: String): Boolean {
         saveSyncTime(key)

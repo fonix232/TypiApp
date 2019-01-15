@@ -16,8 +16,8 @@ class TodoRepository: BaseRepository<Todo>() {
         const val KEY_TODO = "sync_todo_"
     }
 
-    val posts = listResult.toLiveData()
-    val post = singleResult.toLiveData()
+    val todos = listResult.toLiveData()
+    val todo = singleResult.toLiveData()
 
     override fun fetchAllFromLocal(): Flowable<List<Todo>> = dao.getAll(userId)
 

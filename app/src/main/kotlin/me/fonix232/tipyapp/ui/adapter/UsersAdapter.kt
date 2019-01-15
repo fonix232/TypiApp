@@ -17,11 +17,3 @@ class UsersAdapter(items: LiveData<List<User>>, owner: LifecycleOwner, onClick: 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<User, UserItemBinding> =
             object:BaseViewHolder<User, UserItemBinding>(inflate(parent), onClick) {}
 }
-
-//
-//class UsersAdapter(result: LiveData<Outcome<List<User>>>, onClick: (View, User) -> Unit) :
-//    RxAdapter<User, UserItemBinding>(result, onClick, R.layout.item_user) {
-//
-//
-//
-//}

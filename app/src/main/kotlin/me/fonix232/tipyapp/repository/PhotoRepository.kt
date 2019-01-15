@@ -15,8 +15,8 @@ class PhotoRepository : BaseRepository<Photo>() {
         const val KEY_PHOTO = "sync_photo_"
     }
 
-    val posts = listResult.toLiveData()
-    val post = singleResult.toLiveData()
+    val photos = listResult.toLiveData()
+    val photo = singleResult.toLiveData()
 
     override fun fetchAllFromLocal(): Flowable<List<Photo>> = dao.getAll(albumId)
 

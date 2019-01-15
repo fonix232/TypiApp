@@ -42,6 +42,10 @@ class UserListViewModel: BaseViewModel() {
         }
     }
 
+    fun init() {
+        update()
+    }
+
     fun update() {
         repo.fetchAll()
     }

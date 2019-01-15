@@ -2,6 +2,7 @@ package me.fonix232.tipyapp.ui.fragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import me.fonix232.common.ui.fragment.BaseFragment
 import me.fonix232.tipyapp.R
@@ -14,9 +15,9 @@ class UserListFragment: BaseFragment<UserListViewModel, UserListFragmentBinding>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recyclerview.adapter = UsersAdapter(viewModel.users, this) { _, user -> }
+        binding.recyclerview.adapter = UsersAdapter(viewModel.users, this) { _, user ->  findNavController().navigate(TodoListFragmentDirections.gotoTodos(user.id)) }
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
 
-        viewModel.update()
+        viewModel.init()
     }
 }
