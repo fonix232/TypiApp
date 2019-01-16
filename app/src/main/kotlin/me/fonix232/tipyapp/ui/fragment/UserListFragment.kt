@@ -15,7 +15,7 @@ class UserListFragment: BaseFragment<UserListViewModel, UserListFragmentBinding>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recyclerview.adapter = UsersAdapter(viewModel.users, this) { _, user ->  findNavController().navigate(TodoListFragmentDirections.gotoTodos(user.id)) }
+        binding.recyclerview.adapter = UsersAdapter(viewModel.users, this) { _, user -> findNavController().navigate(UserListFragmentDirections.actionUserListFragmentToUserDetailFragment(user.id)) }
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
 
         viewModel.init()

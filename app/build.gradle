@@ -72,6 +72,9 @@ dependencies {
     implementation deps.retrofit.moshi
     implementation deps.retrofit.rxjava2
 
+    implementation deps.glide.runtime
+    kapt deps.glide.compiler
+
     implementation deps.utils.timber
     implementation "net.danlew:android.joda:2.10.1.1"
 

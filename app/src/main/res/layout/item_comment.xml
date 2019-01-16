@@ -15,7 +15,30 @@
             android:paddingEnd="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceCaption"
+                android:text='@{data.name + " (" + data.email + ") commented:"}'
+                android:lines="1"
+                tools:text="Elsa Test (elsa@test.icle) commented:"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:text="@{data.body}"
+                tools:text="This is a test comment made by Test Elsa stuffing a lot of things into it so it's nice and big."
+                />
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/black"/>
 
     </LinearLayout>
 

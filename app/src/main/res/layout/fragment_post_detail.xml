@@ -43,19 +43,32 @@
                 app:refreshing="@{viewModel.isUpdating}"
                 app:onRefreshListener="@{() -> viewModel.update()}">
 
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerview"
+            <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:clipToPadding="false"
-                    tools:listitem="@layout/item_user">
+                    android:layout_height="match_parent">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <include android:id="@+id/post_header" layout="@layout/item_post" app:data="@{viewModel.post}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:clipToPadding="false"
+                            tools:listitem="@layout/item_comment" />
+                </LinearLayout>
+
+
+
+            </androidx.core.widget.NestedScrollView>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

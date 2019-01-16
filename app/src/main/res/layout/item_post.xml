@@ -8,15 +8,44 @@
         <variable name="data" type="me.fonix232.tipyapp.model.Post"/>
     </data>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:orientation="horizontal">
+            app:cardCornerRadius="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
-    </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:text='@{data.title}'
+                    android:lines="1"
+                    tools:text="Post title"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text="@{data.body}"
+                    tools:text="This is a test post made by Test Elsa stuffing a lot of things into it so it's nice and big."
+            />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 </layout>

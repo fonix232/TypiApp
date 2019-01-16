@@ -7,17 +7,18 @@ import androidx.lifecycle.LiveData
 import me.fonix232.common.ui.adapter.BaseAdapter
 import me.fonix232.common.ui.adapter.BaseViewHolder
 import me.fonix232.tipyapp.R
+import me.fonix232.tipyapp.bindings.PostItemBinding
 import me.fonix232.tipyapp.bindings.TodoItemBinding
 import me.fonix232.tipyapp.model.Post
 
 class PostAdapter(items: LiveData<List<Post>>, owner: LifecycleOwner, onClick: (View, Post) -> Unit) :
-    BaseAdapter<Post, TodoItemBinding, BaseViewHolder<Post, TodoItemBinding>>(
+    BaseAdapter<Post, PostItemBinding, BaseViewHolder<Post, PostItemBinding>>(
         items,
         owner,
-        R.layout.item_todo,
+        R.layout.item_post,
         onClick
     ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        object : BaseViewHolder<Post, TodoItemBinding>(inflate(parent), onClick) {}
+        object : BaseViewHolder<Post, PostItemBinding>(inflate(parent), onClick) {}
 }

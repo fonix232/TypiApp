@@ -1,7 +1,9 @@
 package me.fonix232.tipyapp
 
+import androidx.annotation.NonNull
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.LiveDataReactiveStreams
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers

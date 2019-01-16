@@ -7,18 +7,16 @@ import androidx.lifecycle.LiveData
 import me.fonix232.common.ui.adapter.BaseAdapter
 import me.fonix232.common.ui.adapter.BaseViewHolder
 import me.fonix232.tipyapp.R
-import me.fonix232.tipyapp.bindings.UserItemBinding
-import me.fonix232.tipyapp.model.User
+import me.fonix232.tipyapp.bindings.UserDetailItemBinding
 
 
-class UsersAdapter(items: LiveData<List<User>>, owner: LifecycleOwner, onClick: (View, User) -> Unit) :
-    BaseAdapter<User, UserItemBinding, BaseViewHolder<User, UserItemBinding>>(
+class UserDetailAdapter(items: LiveData<List<String>>, owner: LifecycleOwner, onClick: (View, String) -> Unit) :
+    BaseAdapter<String, UserDetailItemBinding, BaseViewHolder<String, UserDetailItemBinding>>(
         items,
         owner,
-        R.layout.item_user,
+        R.layout.item_user_detail,
         onClick
     ) {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        object : BaseViewHolder<User, UserItemBinding>(inflate(parent), onClick) {}
+        object : BaseViewHolder<String, UserDetailItemBinding>(inflate(parent), onClick) {}
 }
