@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/gray_darker</color>
+    <color name="colorPrimaryVariant">@color/gray_darker</color>
+    <color name="colorOnPrimary">@color/white_off</color>
+    <color name="colorOnPrimaryDisabled">@color/gray_lightest</color>
+
+    <color name="colorAccent">@color/blue_dark</color>
+
+    <color name="colorSecondary">@color/gray_darkest</color>
+    <color name="colorSecondaryVariant">@color/gray_darkest</color>
+    <color name="colorOnSecondary">@color/white_off</color>
+    <color name="colorOnSecondaryDisabled">@color/gray_lightest</color>
+
+    <color name="colorBackground">@color/gray_darkest</color>
+    <color name="colorOnBackground">@color/gray_lightest</color>
+
+    <color name="colorSurface">@color/gray_darker</color>
+    <color name="colorOnSurface">@color/white_off</color>
+    <color name="colorOnSurfaceDisabled">@color/gray_lightest</color>
+
+    <color name="colorError">@color/red_dark</color>
+    <color name="colorOnError">@color/gray_lightest</color>
+</resources>

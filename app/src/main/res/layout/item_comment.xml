@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data class=".bindings.CommentItemBinding">
-        <variable name="data" type="me.fonix232.tipyapp.model.Comment"/>
+    <data>
+
+        <variable
+            name="item"
+            type="net.fonix232.typiapp.domain.model.Comment" />
     </data>
 
-    <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:orientation="vertical">
+            android:padding="@dimen/margin_medium">
 
-        <TextView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceCaption"
-                android:text='@{data.name + " (" + data.email + ") commented:"}'
-                android:lines="1"
-                tools:text="Elsa Test (elsa@test.icle) commented:"/>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:textAppearance="?attr/textAppearanceBody1"
-                android:text="@{data.body}"
-                tools:text="This is a test comment made by Test Elsa stuffing a lot of things into it so it's nice and big."
-                />
+                android:text="@{item.name + `&lt;` + item.email + `&gt; commented:`}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Jozsef Kiraly &lt;fonix232@gmail.com&gt; commented:"/>
 
-        <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:background="@android:color/black"/>
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.body}"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_large"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textSize="@dimen/font_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header"
+                tools:text="Test post body that is really really really really really really really really really reallyreally really really really reallyreally really really really reallyreally really really really reallyreally really really really reallyreally really really really really long." />
 
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

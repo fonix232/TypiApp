@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Material stuff-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!--<item name="colorOnPrimaryDisabled">@color/colorOnPrimaryDisabled</item>-->
+
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnPrimary</item>
+
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
+
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <!--<item name="colorOnSurfaceDisabled">@color/colorOnSurfaceDisabled</item>-->
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+        <item name="android:windowBackground">@color/colorBackground</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/AppTheme.ShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppTheme.ShapeAppearance.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/AppTheme.ShapeAppearance.LargeComponent</item>
+
+        <!-- Toolbar -->
+        <item name="toolbarStyle">@style/AppTheme.Toolbar</item>
+        <item name="actionBarPopupTheme">@style/AppTheme.ThemeOverlay.Toolbar</item>
+    </style>
+
+</resources>

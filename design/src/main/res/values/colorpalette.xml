@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue_light">#6ec6ff</color>
+    <color name="blue_normal">#2196f3</color>
+    <color name="blue_dark">#0069c0</color>
+
+    <color name="green_light">#80e27e</color>
+    <color name="green_normal">#4caf50</color>
+    <color name="green_dark">#087f23</color>
+
+    <color name="yellow_light">#ffff72</color>
+    <color name="yellow_normal">#ffeb3b</color>
+    <color name="yellow_dark">#c8b900</color>
+
+    <color name="orange_light">#ffc947</color>
+    <color name="orange_normal">#ff9800</color>
+    <color name="orange_dark">#c66900</color>
+
+    <color name="red_light">#ff6f60</color>
+    <color name="red_normal">#e53935</color>
+    <color name="red_dark">#ab000d</color>
+
+    <color name="purple_light">#9a67ea</color>
+    <color name="purple_normal">#673ab7</color>
+    <color name="purple_dark">#320b86</color>
+
+    <!-- Grayscale -->
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_off">#FFFBFBFB</color>
+    <color name="gray_lightest">#a7c0cd</color>
+    <color name="gray_lighter">#718792</color>
+    <color name="gray_light">#546e7a</color>
+    <color name="gray_medium">#455a64</color>
+    <color name="gray_dark">#37474f</color>
+    <color name="gray_darker">#263238</color>
+    <color name="gray_darkest">#102027</color>
+    <color name="black">#000a12</color>
+</resources>

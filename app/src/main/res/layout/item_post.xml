@@ -1,50 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data class=".bindings.PostItemBinding">
-        <variable name="data" type="me.fonix232.tipyapp.model.Post"/>
+    <data>
+
+        <variable
+            name="item"
+            type="net.fonix232.typiapp.domain.model.Post" />
     </data>
 
     <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:padding="@dimen/margin_medium">
 
-        <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:orientation="vertical">
+                android:text="@{item.title}"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintBottom_toTopOf="@id/body"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Test Post Title" />
 
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:text='@{data.title}'
-                    android:lines="1"
-                    tools:text="Post title"/>
+                android:id="@+id/body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@{item.body}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintBottom_toTopOf="@id/comment_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="Test post body that is really really really really really really really really really reallyreally really really really reallyreally really really really reallyreally really really really reallyreally really really really reallyreally really really really really long." />
 
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:textAppearance="?attr/textAppearanceBody1"
-                    android:text="@{data.body}"
-                    tools:text="This is a test post made by Test Elsa stuffing a lot of things into it so it's nice and big."
-            />
+                android:id="@+id/comment_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:drawableStart="@drawable/ic_comment"
+                android:drawablePadding="@dimen/margin_small"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_small"
+                android:text="@{item.comments.size() + ` comments`}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/body"
+                tools:text="134 comments" />
 
-        </LinearLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 

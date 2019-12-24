@@ -1,58 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data class=".bindings.UserListFragmentBinding">
-        <variable name="viewModel" type="me.fonix232.tipyapp.viewmodel.UserListViewModel"/>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="net.fonix232.typiapp.viewmodel.UserListViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin">
-
-                <TextView
-                        style="@style/AppTheme.ActionBar.Title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textSize="28sp"
-                        android:textColor="#666"
-                        android:text="@{viewModel.title}"/>
-
-            </androidx.appcompat.widget.Toolbar>
-
-        </com.google.android.material.appbar.AppBarLayout>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/windowBackground"
+        android:fitsSystemWindows="true">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                app:refreshing="@{viewModel.isUpdating}"
-                app:onRefreshListener="@{() -> viewModel.update()}">
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:paddingTopSystemWindowInsets="@{false}"
+            android:fitsSystemWindows="true"
+            android:overScrollMode="never">
 
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:clipToPadding="false"
-                    tools:listitem="@layout/item_user">
-
-            </androidx.recyclerview.widget.RecyclerView>
+                android:id="@+id/user_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:fitsSystemWindows="false"
+                android:overScrollMode="never"
+                app:paddingTopSystemWindowInsets="@{true}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="25"
+                tools:listitem="@layout/item_user" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

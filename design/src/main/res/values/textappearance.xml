@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.TextAppearance" />
+
+    <style name="AppTheme.TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Chip" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.H1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_headline1</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.H2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_headline2</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.H3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_headline3</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.H4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_headline4</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.H5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_headline5</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.H6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_headline6</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/product_sans</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Toolbar" parent="AppTheme.TextAppearance.H5">
+        <item name="fontFamily">@font/product_sans</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>

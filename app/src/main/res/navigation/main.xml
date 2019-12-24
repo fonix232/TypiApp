@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="net.fonix232.typiapp.ui.fragment.SplashFragment"
+        tools:layout="@layout/fragment_splash"
+        android:label="SplashFragment">
+        <action
+            android:id="@id/splashToUserList"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@navigation/main"
+            app:destination="@id/userListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="net.fonix232.typiapp.ui.fragment.UserListFragment"
+        tools:layout="@layout/fragment_user_list"
+        android:label="UserListFragment">
+        <action
+            android:id="@+id/userListToUserHome"
+            app:destination="@id/userHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userHomeFragment"
+        android:name="net.fonix232.typiapp.ui.fragment.UserHomeFragment"
+        tools:layout="@layout/fragment_user_home"
+        android:label="UserHomeFragment">
+        <action
+            android:id="@+id/userHomeToTodoList"
+            app:destination="@id/todoListFragment" />
+        <action
+            android:id="@+id/userHomeToUserProfile"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/userHomeToPostList"
+            app:destination="@id/postListFragment" />
+        <action
+            android:id="@+id/userHomeToAlbumList"
+            app:destination="@id/albumListFragment" />
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumListFragment"
+        android:name="net.fonix232.typiapp.ui.fragment.AlbumListFragment"
+        tools:layout="@layout/fragment_album_list"
+        android:label="AlbumListFragment">
+        <action
+            android:id="@+id/albumListToAlbumDetail"
+            app:destination="@id/albumFragment" />
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/postListFragment"
+        tools:layout="@layout/fragment_post_list"
+        android:name="net.fonix232.typiapp.ui.fragment.PostListFragment"
+        android:label="PostListFragment">
+        <action
+            android:id="@+id/postListToPostDetail"
+            app:destination="@id/postFragment" />
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        tools:layout="@layout/fragment_user_profile"
+        android:name="net.fonix232.typiapp.ui.fragment.UserProfileFragment"
+        android:label="UserProfileFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoListFragment"
+        tools:layout="@layout/fragment_todo_list"
+        android:name="net.fonix232.typiapp.ui.fragment.TodoListFragment"
+        android:label="TodoListFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/postFragment"
+        tools:layout="@layout/fragment_post"
+        android:name="net.fonix232.typiapp.ui.fragment.PostFragment"
+        android:label="PostFragment" >
+        <argument
+            android:name="postId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumFragment"
+        tools:layout="@layout/fragment_album"
+        android:name="net.fonix232.typiapp.ui.fragment.AlbumFragment"
+        android:label="AlbumFragment" >
+        <argument android:name="albumId" />
+    </fragment>
+    <action
+        android:id="@id/goToSplash"
+        app:destination="@id/splashFragment" />
+</navigation>

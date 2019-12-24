@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="goToSplash" />
+    <item type="id" name="splashToUserList" />
+    <item type="id" name="userListToUserHome" />
+    <item type="id" name="userHomeToUserProfile" />
+    <item type="id" name="userHomeToAlbumList" />
+    <item type="id" name="userHomeToPostList" />
+    <item type="id" name="userHomeToTodoList" />
+    <item type="id" name="postListToPostDetail" />
+    <item type="id" name="albumListToAlbumDetail" />
+</resources>
